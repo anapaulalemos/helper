@@ -6,12 +6,15 @@ import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
 
 const barbellListKg: { [key: string]: number } = {
+  '1': 0,
   '1.25': 0,
+  '2.2': 0,
   '2.5': 0,
   '4.5': 0,
   '5': 0,
   '11.3': 0,
   '15': 0,
+  '15.9': 0,
   '20.4': 0,
   '25': 0,
 };
@@ -68,8 +71,8 @@ export default function Home() {
           <Image
             src="./capivaras.png"
             alt="capivaras"
-            width={150}
-            height={150}
+            width={75}
+            height={75}
           />
           <BarbellGender gender={gender} setGender={setGender} />
           <Box h={5} />
@@ -106,7 +109,6 @@ export default function Home() {
           >
             <Center fontWeight="bold">{totalLb.toFixed(2)}</Center>
           </Box>
-
           <HStack>
             <Button mt={5} onClick={clearTotal}>
               Limpar
