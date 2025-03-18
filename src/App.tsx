@@ -62,7 +62,7 @@ function App() {
   return (
     <>
       <main>
-      <VStack mt={2}>
+        <VStack mt={2}>
           <img src={logo} width={75} height={75} alt="Capivaras" />
           <BarbellGender gender={gender} setGender={setGender} />
           <Box h={5} />
