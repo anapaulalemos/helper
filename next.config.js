@@ -1,9 +1,7 @@
-const isGithubActions = process.env.GITHUB_PUBLIC_BASE_PATH || false;
-
-// GITHUB_REPOSITORY is <owner>/<repo>, so we need to trim off `<owner>/`
-const prefix = isGithubActions
-  ? `/${process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')}`
-  : undefined;
+// For GitHub Pages deployment, we need to set the basePath to the repository name
+// This can be set via environment variable or defaults to /helper for this project
+const isProduction = process.env.NODE_ENV === 'production';
+const basePath = isProduction ? '/helper' : '';
 
 
 /** @type {import('next').NextConfig} */
@@ -13,8 +11,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: prefix,
-  assetPrefix: prefix,
+  basePath: basePath,
+  assetPrefix: basePath,
 }
 
 module.exports = nextConfig
