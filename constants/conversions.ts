@@ -1,0 +1,1 @@
+export const POUND_TO_KG_RATIO = 2.20462;
